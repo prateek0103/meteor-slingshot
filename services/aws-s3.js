@@ -99,7 +99,7 @@ Slingshot.S3Storage = {
             directive.key.call(method, file, meta) : directive.key,
 
           bucket: directive.bucket,
-
+          //contextData: {"data":"Hi"},
           "Content-Type": file.type,
           "acl": directive.acl,
 
@@ -120,10 +120,11 @@ Slingshot.S3Storage = {
           }).join("/");
 
     this.applySignature(payload, policy, directive);
-
+console.log(meta);
     return {
       upload: bucketUrl,
       download: downloadUrl,
+     contextData: meta,
       postData: [{
         name: "key",
         value: payload.key
