@@ -120,11 +120,11 @@ Slingshot.S3Storage = {
           }).join("/");
 
     this.applySignature(payload, policy, directive);
-console.log(meta);
+//console.log(meta);
     return {
       upload: bucketUrl,
       download: downloadUrl,
-     contextData: meta,
+     //contextData: meta,
       postData: [{
         name: "key",
         value: payload.key
